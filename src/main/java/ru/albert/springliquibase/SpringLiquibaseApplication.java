@@ -7,4 +7,4 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringLiquibaseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringLiquibaseApplication.class, args);	}}
+		SpringApplication.run(SpringLiquibaseApplication.class, args);	  }}

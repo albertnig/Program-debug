@@ -48,7 +48,13 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>3.1.2</version>
+				<version>3.4.0</version>
+				<configuration>
+					<configLocation>config/checkstyle/checkstyle2.xml</configLocation>
+					<failsOnError>true</failsOnError>
+					<includeTestSourceDirectory>false</includeTestSourceDirectory>
+					<suppressionsLocation>config/checkstyle/suppressions2.xml</suppressionsLocation>
+				</configuration>
 				<executions>
 					<execution>
 						<phase>validate</phase>
@@ -57,9 +63,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<configLocation>config/checkstyle/checkstyle.xml</configLocation>
-				</configuration>
 			</plugin>
 
 		</plugins>

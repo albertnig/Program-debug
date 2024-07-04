@@ -50,13 +50,17 @@
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>3.4.0</version>
 				<configuration>
-					<configLocation>config/checkstyle/checkstyle2.xml</configLocation>
-					<failsOnError>true</failsOnError>
+					<consoleOutput>true</consoleOutput>
 					<includeTestSourceDirectory>false</includeTestSourceDirectory>
+					<failOnViolation>true</failOnViolation>
+					<failsOnError>true</failsOnError>
+					<configLocation>config/checkstyle/checkstyle2.xml</configLocation>
 					<suppressionsLocation>config/checkstyle/suppressions2.xml</suppressionsLocation>
+                    <suppressionsFileExpression>suppressions2.xml</suppressionsFileExpression>
 				</configuration>
 				<executions>
 					<execution>
+                        <id>validate</id>
 						<phase>validate</phase>
 						<goals>
 							<goal>check</goal>

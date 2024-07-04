@@ -12,3 +12,4 @@ public class SpringLiquibaseApplication {
 // some comment
 // some comment
 // some comment
+// some comment

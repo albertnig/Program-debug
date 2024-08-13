@@ -9,9 +9,3 @@ public class SpringLiquibaseApplication {
     SpringApplication.run(SpringLiquibaseApplication.class, args);
    }
 }
-// some comment
-// some comment
-// some comment
-// some comment
-// some comment
-// some comment

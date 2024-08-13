@@ -16,11 +16,13 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
@@ -31,11 +33,25 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+
+
 	</dependencies>
 
 	<build>
@@ -51,10 +67,10 @@
 				<version>3.4.0</version>
 				<configuration>
 					<consoleOutput>true</consoleOutput>
-					<includeTestSourceDirectory>false</includeTestSourceDirectory>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
 					<failOnViolation>true</failOnViolation>
 					<failsOnError>true</failsOnError>
-					<configLocation>config/checkstyle/checkstyle2.xml</configLocation>
+					<configLocation>config/checkstyle/checkstyle.xml</configLocation>
 					<suppressionsLocation>config/checkstyle/suppressions2.xml</suppressionsLocation>
                     <suppressionsFileExpression>suppressions2.xml</suppressionsFileExpression>
 				</configuration>

@@ -1,9 +1,0 @@
-databaseChangeLog:
-
-  - changeSet:
-      id: 1
-      author: albert
-
-  - include:
-      file: v2-create-all-table.sql
-      relativeToChangelogFile: true

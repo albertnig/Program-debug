@@ -10,7 +10,11 @@ import java.util.UUID;
 
 @Repository
 public interface OrganizerRepository extends JpaRepository<Organizer, UUID> {
-  // Метод для поиска записей старше определенной даты
-  List<Organizer> findByDateCreateBefore(LocalDateTime date);
+  /*// Метод для поиска записей старше определенной даты
+  List<Organizer> findByDateCreateBefore(LocalDateTime date);*/
+
+  // Метод для поиска записей с delete = true
+  List<Organizer> findByDeleteTrue();
 }
+
 

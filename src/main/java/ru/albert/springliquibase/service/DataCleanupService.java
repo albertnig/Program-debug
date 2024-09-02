@@ -20,9 +20,20 @@ public class DataCleanupService {
     // Логика для удаления данных из БД
     System.out.println("Performing data cleanup...");
 
-    // Найдем записи, созданные более 30 секунд назад
-    LocalDateTime thirtySecondsAgo = LocalDateTime.now().minusSeconds(30);
-    List<Organizer> oldOrganizers = organizerRepository.findByDateCreateBefore(thirtySecondsAgo);
+    // Найти и удалить все записи, где delete = true
+    List<Organizer> organizersToDelete = organizerRepository.findByDeleteTrue();
+
+    // Удаляем найденные записи
+    if (!organizersToDelete.isEmpty()) {
+      organizerRepository.deleteAll(organizersToDelete);
+      System.out.println("Deleted " + organizersToDelete.size() + " organizers marked for deletion.");
+    } else {
+      System.out.println("No organizers marked for deletion found.");
+    }
+
+    /*// Найдем записи, созданные более 30 дней назад
+    LocalDateTime thirtyDaysAgo = LocalDateTime.now().minusDays(30);
+    List<Organizer> oldOrganizers = organizerRepository.findByDateCreateBefore(thirtyDaysAgo);
 
     System.out.println("Found " + oldOrganizers.size() + " organizers to delete."); //логирование
 
@@ -32,6 +43,6 @@ public class DataCleanupService {
       System.out.println("Deleted " + oldOrganizers.size() + " organizers.");
     } else {
       System.out.println("No old organizers found.");
-    }
+    }*/
   }
 }

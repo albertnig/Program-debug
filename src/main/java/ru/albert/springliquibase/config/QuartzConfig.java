@@ -30,7 +30,7 @@ public class QuartzConfig {
     return TriggerBuilder.newTrigger()
       .forJob(dataCleanupJobDetail())
       .withIdentity("dataCleanupTrigger", "dataCleanupGroup")
-      .withSchedule(CronScheduleBuilder.cronSchedule("*/3 * * * * ?")) // каждые 3 секунды
+      .withSchedule(CronScheduleBuilder.cronSchedule("0 38 11 ? * SUN")) // каждое воскресенье в 11:30
       .build();
   }
 

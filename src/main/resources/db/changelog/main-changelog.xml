@@ -4,5 +4,6 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
 
+
     <include file="v1/v3-create-table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>

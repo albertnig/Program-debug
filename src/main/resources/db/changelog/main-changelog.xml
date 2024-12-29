@@ -5,5 +5,7 @@
 
 
 
+
+
     <include file="v1/v3-create-table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
